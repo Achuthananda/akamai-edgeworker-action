@@ -10,7 +10,12 @@ network=$2
 groupid=$3
 accountSwitchKey=$4
 
-#echo ${edgeworkersName}
+echo ${edgeworkersID}
+echo ${network}
+echo ${groupid}
+echo ${accountSwitchKey}
+
+
 #response=$(akamai edgeworkers --accountkey $accountSwitchKey list-ids --json --section edgeworkers --edgerc ~/.edgerc)
 #edgeworkerList=$( cat ${response} )
 #edgeworkersID=$(echo ${edgeworkerList} | jq --arg edgeworkersName "${edgeworkersName}" '.data[] | select(.name == $edgeworkersName) | .edgeWorkerId')
