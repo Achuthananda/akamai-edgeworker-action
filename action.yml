@@ -1,9 +1,9 @@
 name: "Deploy Akamai Edgeworkers"
 description: "GitHub Action to edgerworkers via Akamai API's"
-author: jdmevo123
+author: Achuthananda M P
 inputs:
-  edgeworkersName:
-    description:  'Name of Edgeworker'
+  edgeworkersId:
+    description:  'Edgeworker Id'
     required: true
   network:
     description: 'Network you wish to activate'
@@ -19,7 +19,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.edgeworkersName}}
+    - ${{ inputs.edgeworkersId}}
     - ${{ inputs.network }}
     - ${{ inputs.groupid }}
     - ${{ inputs.accountSwitchKey }}

@@ -5,16 +5,16 @@ set -o pipefail
 echo -e "${EDGERC}" > ~/.edgerc
 
 #  Set Variables
-edgeworkersName=$1
+edgeworkersID=$1
 network=$2
 groupid=$3
 accountSwitchKey=$4
 
-echo ${edgeworkersName}
-response=$(akamai edgeworkers --accountkey $accountSwitchKey list-ids --json --section edgeworkers --edgerc ~/.edgerc)
-edgeworkerList=$( cat ${response} )
-edgeworkersID=$(echo ${edgeworkerList} | jq --arg edgeworkersName "${edgeworkersName}" '.data[] | select(.name == $edgeworkersName) | .edgeWorkerId')
-edgeworkersgroupIude=$(echo $edgeworkerList | jq --arg edgeworkersName "$edgeworkersName" '.data[] | select(.name == $edgeworkersName) | .groupId')
+#echo ${edgeworkersName}
+#response=$(akamai edgeworkers --accountkey $accountSwitchKey list-ids --json --section edgeworkers --edgerc ~/.edgerc)
+#edgeworkerList=$( cat ${response} )
+#edgeworkersID=$(echo ${edgeworkerList} | jq --arg edgeworkersName "${edgeworkersName}" '.data[] | select(.name == $edgeworkersName) | .edgeWorkerId')
+#edgeworkersgroupIude=$(echo $edgeworkerList | jq --arg edgeworkersName "$edgeworkersName" '.data[] | select(.name == $edgeworkersName) | .groupId')
 
 if [ -n "${WORKER_DIR}" ]; then
   GITHUB_WORKSPACE="${GITHUB_WORKSPACE}/${WORKER_DIR}"
