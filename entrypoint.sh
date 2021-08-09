@@ -31,12 +31,29 @@ tarCommand='tar -czvf ~/deploy.tar.gz'
 # check if needed files exist
 mainJSFile='main.js'
 bundleFile='bundle.json'
+edgeKVJSFile='edgekv.js'
+edgeKVTokenJSFile='edgekv_token.js'
+
+
 utilitiesDir='utils'
 if [ -f $mainJSFile ] ; then 
   tarCommand=${tarCommand}" $mainJSFile"
 else
   echo "Error: $mainJSFile is missing" && exit 123
+fi
+
+if [ -f $edgeKVJSFile ] ; then 
+  tarCommand=${tarCommand}" $edgeKVJSFile"
+else
+  echo "Error: $edgeKVJSFile is missing" && exit 123
 fi 
+
+if [ -f $edgeKVTokenJSFile ] ; then 
+  tarCommand=${tarCommand}" $edgeKVTokenJSFile"
+else
+  echo "Error: $edgeKVTokenJSFile is missing" && exit 123
+fi 
+
 if [ -f $bundleFile ] ; then 
   tarCommand=${tarCommand}" $bundleFile"
 else
