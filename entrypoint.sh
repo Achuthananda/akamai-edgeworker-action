@@ -32,7 +32,7 @@ tarCommand='tar -czvf ~/deploy.tar.gz'
 mainJSFile='main.js'
 bundleFile='bundle.json'
 edgeKVJSFile='edgekv.js'
-edgeKVTokenJSFile='edgekv_token.js'
+edgeKVTokenJSFile='edgekv_tokens.js'
 
 
 utilitiesDir='utils'
